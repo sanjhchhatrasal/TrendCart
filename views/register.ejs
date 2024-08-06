@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   <div class="main h-screen w-full bg-zinc-900 flex items-center justify-center">
+        <div class="form h-[85%] w-[35%] bg-zinc-300/10 rounded-lg text-white p-5">
+            <h1 class="text-3xl text-center font-semibold">Welcome to <span class="text-pink-500">TrendCart!</span></h1>
+            <h2 class="text-zinc-300 mt-4 text-center">Register now to unlock exclusive <span class="text-pink-600">benefits</span> and <span class="text-pink-600">seamless shopping</span>.</h2>
+           <form class="w-full p-2 flex flex-col items-center mt-4" action="">
+            <input class="px-3 py-2 rounded-lg outline-none mt-3 bg-transparent w-[80%] border-2 border-zinc-500" type="text" placeholder="Fullname" name="fullname">
+            <input class="px-3 py-2 rounded-lg outline-none mt-3 bg-transparent w-[80%] border-2 border-zinc-500" type="text" placeholder="Username" name="username">
+            <input class="px-3 py-2 rounded-lg outline-none mt-3 bg-transparent w-[80%] border-2 border-zinc-500" type="email" placeholder="Email" name="email">
+            <input class="px-3 py-2 rounded-lg outline-none mt-3 bg-transparent w-[80%] border-2 border-zinc-500" type="text" placeholder="Contact number" name="contact">
+            <input class="px-3 py-2 rounded-lg outline-none mt-3 bg-transparent w-[80%] border-2 border-zinc-500" type="password" placeholder="Password" name="password">
+            <input class="mt-4 px-3 py-2 font-semibold w-[80%] bg-pink-600 rounded-lg cursor-pointer" type="submit" value="Create Account">
+            <p class="text-zinc-300 mt-4">Already have an account? <a class="text-pink-500 underline" href="/login">Log in here</a>.</p>
+           </form>
+        </div>
+   </div>
+</body>
+</html>
