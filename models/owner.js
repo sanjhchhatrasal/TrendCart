@@ -21,7 +21,12 @@ const ownerSchema = mongoose.Schema({
     profilePic: {
         type: Buffer
     },
-   products :[],
+   products :[
+    {
+        type:mongoose.Schema.Types.ObjectId,
+        ref: "Product"
+    }
+   ],
    gstin: String
 });
 

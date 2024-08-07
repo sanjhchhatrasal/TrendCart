@@ -1,6 +1,7 @@
 const userModel = require("../models/user");
 const bcrypt = require("bcrypt");
 const tokenGenerator = require("../utils/tokenGenerator");
+const ownerModel = require("../models/owner");
 
 
 //register controller
@@ -75,7 +76,8 @@ module.exports.loginUser = async (req, res) => {
 
 //profile controller
 module.exports.profilePage = async (req, res) => {
-    res.render("profile");
+    let products = await ownerModel.find()
+    res.render("profile", {products});
 }
 
 

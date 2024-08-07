@@ -1,11 +1,12 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-const authRouter = require("./routes/auth");
 const db = require("./config/mongoose-connection");
 const cookieParser = require("cookie-parser");
 const expressSession = require("express-session");
 const flash = require("connect-flash");
+const authRouter = require("./routes/auth");
+const productRouter = require("./routes/product");
 
 require("dotenv").config();
 
@@ -24,5 +25,6 @@ app.use(flash());
 
 
 app.use("/", authRouter);
+app.use("/product", productRouter);
 
 app.listen(3000);
