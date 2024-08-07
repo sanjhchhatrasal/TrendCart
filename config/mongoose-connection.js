@@ -1,11 +1,16 @@
 const mongoose = require("mongoose");
+const config = require("config");
+const dbgr = require("debug")("development:mongoose");
 
- const db = mongoose.connect("mongodb://127.0.0.1:27017/ecoomerceBackend")
+mongoose
+.connect(`${config.get("MONGODB_URI")}/TrendCartBackend`)
 .then(function(){
-    console.log("connected to db")
+    dbgr("connected to db from dbgr");
 })
 .catch(function(err){
-    console.log("databse error -", err);
+    dbgr("databse error -", err);
 })
 
-module.exports = db;
+const db = mongoose.connection
+
+module.exports = db ;
