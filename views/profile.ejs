@@ -7,8 +7,135 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-   <div class="main h-screen w-full bg-zinc-900 flex items-center justify-center p-5 text-white">
-            <h1 class="text-4xl text-center font-semibold mt-4">Welcome to <span class="text-pink-500">TrendCart!</span></h1>
+   <div class="main h-screen w-full py-3 px-5 relative overflow-x-hidden">
+        <div class="nav h-[10%] fixed z-[999] w-full flex items-center justify-between">
+            <h1 class="text-3xl text-pink-600 font-semibold">TrendCart</h1>
+            <div class="right flex items-center gap-8 mr-20">
+                <p class="text-2xl font-semibold">Cart</p>
+                <p class="text-2xl font-semibold">Profile</p>
+            </div>
+        </div>
+        <div class="content flex items-center gap-5 w-full h-full">
+            <div class="left w-[25%] top-[13%] fixed h-full flex flex-col pt-2 pl-5">
+                <div class="sort flex gap-3">
+                    <p class="text-lg">sort by</p>
+                    <select class="bg-transparent outline-none font-semibold" name="sort" id="">
+                        <option value="Popular">Popular</option>
+                        <option value="Old">Old</option>
+                    </select>
+                </div>
+                <div class="mid mt-24 gap-2 flex flex-col">
+                    <a href="">New Collection</a>
+                    <a href="">AI Products</a>
+                    <a href="">Discounted Products</a>
+                </div>
+                <div class="filter mt-24 flex flex-col gap-2">
+                    <p class="font-semibold">Filter by:</p>
+                    <a href="">Avalabilty</a>
+                    <a href="">Discount</a>
+                </div>
+            </div>
+            <div class="right w-[75%] absolute left-[27%] top-[13%] flex flex-wrap gap-2 pt-2">
+                <div class="item h-60 w-[22%] bg-green-600">
+                    <div class="up h-[70%] w-full bg-green-300"></div>
+                    <div class="btm h-[30%] w-full bg-yellow-500 flex items-center justify-between px-3">
+                       <div class="name-price font-semibold">
+                        <div class="name">Tot Bag</div>
+                        <div class="price">Rs 1200</div>
+                       </div>
+                       <div class="add cursor-pointer h-7 w-7 rounded-full bg-white flex items-center justify-center">
+                        <p class="font-semibold text-xl">+</p>
+                       </div>
+                    </div>
+                </div>
+                <div class="item h-60 w-[22%] bg-green-600">
+                    <div class="up h-[70%] w-full bg-green-300"></div>
+                    <div class="btm h-[30%] w-full bg-yellow-500 flex items-center justify-between px-3">
+                       <div class="name-price font-semibold">
+                        <div class="name">Tot Bag</div>
+                        <div class="price">Rs 1200</div>
+                       </div>
+                       <div class="add cursor-pointer h-7 w-7 rounded-full bg-white flex items-center justify-center">
+                        <p class="font-semibold text-xl">+</p>
+                       </div>
+                    </div>
+                </div>
+                <div class="item h-60 w-[22%] bg-green-600">
+                    <div class="up h-[70%] w-full bg-green-300"></div>
+                    <div class="btm h-[30%] w-full bg-yellow-500 flex items-center justify-between px-3">
+                       <div class="name-price font-semibold">
+                        <div class="name">Tot Bag</div>
+                        <div class="price">Rs 1200</div>
+                       </div>
+                       <div class="add cursor-pointer h-7 w-7 rounded-full bg-white flex items-center justify-center">
+                        <p class="font-semibold text-xl">+</p>
+                       </div>
+                    </div>
+                </div>
+                <div class="item h-60 w-[22%] bg-green-600">
+                    <div class="up h-[70%] w-full bg-green-300"></div>
+                    <div class="btm h-[30%] w-full bg-yellow-500 flex items-center justify-between px-3">
+                       <div class="name-price font-semibold">
+                        <div class="name">Tot Bag</div>
+                        <div class="price">Rs 1200</div>
+                       </div>
+                       <div class="add cursor-pointer h-7 w-7 rounded-full bg-white flex items-center justify-center">
+                        <p class="font-semibold text-xl">+</p>
+                       </div>
+                    </div>
+                </div>
+                <div class="item h-60 w-[22%] bg-green-600">
+                    <div class="up h-[70%] w-full bg-green-300"></div>
+                    <div class="btm h-[30%] w-full bg-yellow-500 flex items-center justify-between px-3">
+                       <div class="name-price font-semibold">
+                        <div class="name">Tot Bag</div>
+                        <div class="price">Rs 1200</div>
+                       </div>
+                       <div class="add cursor-pointer h-7 w-7 rounded-full bg-white flex items-center justify-center">
+                        <p class="font-semibold text-xl">+</p>
+                       </div>
+                    </div>
+                </div>
+                <div class="item h-60 w-[22%] bg-green-600">
+                    <div class="up h-[70%] w-full bg-green-300"></div>
+                    <div class="btm h-[30%] w-full bg-yellow-500 flex items-center justify-between px-3">
+                       <div class="name-price font-semibold">
+                        <div class="name">Tot Bag</div>
+                        <div class="price">Rs 1200</div>
+                       </div>
+                       <div class="add cursor-pointer h-7 w-7 rounded-full bg-white flex items-center justify-center">
+                        <p class="font-semibold text-xl">+</p>
+                       </div>
+                    </div>
+                </div>
+                <div class="item h-60 w-[22%] bg-green-600">
+                    <div class="up h-[70%] w-full bg-green-300"></div>
+                    <div class="btm h-[30%] w-full bg-yellow-500 flex items-center justify-between px-3">
+                       <div class="name-price font-semibold">
+                        <div class="name">Tot Bag</div>
+                        <div class="price">Rs 1200</div>
+                       </div>
+                       <div class="add cursor-pointer h-7 w-7 rounded-full bg-white flex items-center justify-center">
+                        <p class="font-semibold text-xl">+</p>
+                       </div>
+                    </div>
+                </div>
+                <div class="item h-60 w-[22%] bg-green-600">
+                    <div class="up h-[70%] w-full bg-green-300"></div>
+                    <div class="btm h-[30%] w-full bg-yellow-500 flex items-center justify-between px-3">
+                       <div class="name-price font-semibold">
+                        <div class="name">Tot Bag</div>
+                        <div class="price">Rs 1200</div>
+                       </div>
+                       <div class="add cursor-pointer h-7 w-7 rounded-full bg-white flex items-center justify-center">
+                        <p class="font-semibold text-xl">+</p>
+                       </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
    </div>
 </body>
 </html>
