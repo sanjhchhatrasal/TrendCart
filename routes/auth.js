@@ -1,6 +1,7 @@
 const express = require("express");
-const { registerPage, loginPage, registerUser, loginUser, profilePage, logout } = require("../controllers/auth-controller");
+const { registerPage, loginPage, registerUser, loginUser, profilePage, logout, cartPage } = require("../controllers/auth-controller");
 const {isLoggedIn} = require("../middlewares/isLoggedIn");
+const upload = require("../config/multer");
 const router = express.Router();
 
 
@@ -18,6 +19,10 @@ router.post("/login", loginUser);
 
 //profile route
 router.get("/profile", isLoggedIn, profilePage);
+
+
+//cart route
+router.get("/cart/:id", isLoggedIn, cartPage);
 
 
 //logout route

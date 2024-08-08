@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const product = require("./product");
 
 
 const addressSchema = mongoose.Schema({
@@ -19,6 +20,7 @@ const addressSchema = mongoose.Schema({
         required: true
     }
 })
+
 
 const userSchema = mongoose.Schema({
     fullname: {
@@ -49,7 +51,7 @@ const userSchema = mongoose.Schema({
         type: Buffer
     },
     cart: [
-        {
+        { 
             type: mongoose.Schema.Types.ObjectId,
             ref: "Product"
         }

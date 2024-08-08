@@ -1,0 +1,2 @@
+
+<!-- <img class="h-full w-full object-cover" src="data:image/jpg;base64, <%= product.productimg.toString("base64") %>" alt=""> -->

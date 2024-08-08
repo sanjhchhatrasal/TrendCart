@@ -2,6 +2,7 @@ const userModel = require("../models/user");
 const bcrypt = require("bcrypt");
 const tokenGenerator = require("../utils/tokenGenerator");
 const ownerModel = require("../models/owner");
+const productModel = require("../models/product");
 
 
 //register controller
@@ -76,8 +77,26 @@ module.exports.loginUser = async (req, res) => {
 
 //profile controller
 module.exports.profilePage = async (req, res) => {
-    let products = await ownerModel.find()
-    res.render("profile", {products});
+    let products = await productModel.find();
+    let success = req.flash("success");
+    res.render("profile", {products, success});
+}
+
+
+//cart controller
+module.exports.cartPage = async (req, res) => {
+    
+     try{
+        let user = await userModel.findOne({email: req.user.email}).populate("cart");
+          // Find the product by ID
+          let product = await productModel.findById(req.params.id);
+        console.log(user.cart)
+      user.cart.push(product);
+    await user.save(); 
+    res.render("cart", {user}) 
+     } catch(error){
+        res.send(error.message)
+    }
 }
 
 

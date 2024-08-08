@@ -1,7 +1,8 @@
 const productModel = require("../models/product");
 
 module.exports.createProductPage = async (req, res) => {
-    res.render("createProducts");
+    let success = req.flash("success");
+    res.render("createProducts", {success});
 }
 
 module.exports.createProduct = async (req, res) => {
@@ -16,9 +17,10 @@ module.exports.createProduct = async (req, res) => {
         textColor,
         productPic: req.file.buffer
     })
-    console.log(product)
+    req.flash("success", "Product created successfully!")
     res.redirect("/profile");
     } catch(error){
+        res.send(error.message);
         console.log(error.message)
     }
 }

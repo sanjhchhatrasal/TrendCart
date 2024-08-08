@@ -14,20 +14,14 @@
    <div class="main h-screen w-full py-3 px-5 relative overflow-x-hidden">
         <div class="nav h-[8%] fixed z-[999] w-[96%] flex items-center justify-between border-b-2 border-zinc-600 relative">
             <h1 class="text-3xl text-pink-600 font-semibold">TrendCart</h1>
-            <% if(success.length > 0){ %>
-                <div id="success-msg" class="absolute left-1/2 top-6 -translate-x-1/2 -translate-y-1/2 p-3">
-                    <span class="inline-block mt-1 mb-3 text-green-600">
-                        <%= success %>
-                    </span>
-                </div>
-           <% } %>
             <div class="right flex items-center gap-5">
-                <a href="/cart" class="text-xl font-semibold">Cart</a>
+                <a href="/profile" class="text-xl font-semibold">Home</a>
                 <a href="/product" class="text-xl font-semibold">Create new product</a>
                 <a href="" class="text-xl font-semibold">My Account</a>
                 <a class="text-xl text-red-600 font-semibold" href="/logout">Logout</a>
             </div>
         </div>
+        
         <div class="content flex items-center gap-5 w-full h-full">
             <div class="left w-[25%] top-[13%] fixed h-full flex flex-col pt-2 pl-5">
                 <div class="sort flex gap-3">
@@ -50,10 +44,11 @@
             </div>
             <div class="right w-[75%] absolute left-[27%] top-[13%] flex flex-wrap gap-2 pt-2">
                
-               <% if(products.length > 0){ %>
-                  <% products.forEach(function(product){ %>
+               <% if(user.cart.length > 0){ %>
+                  <% user.cart.forEach(function(product){ %>
                     <div class="item h-60 w-[22%] bg-pink-800">
                         <div class="up h-[70%] w-full bg-[<%= product.bgColor %>]">
+                            
                             <img class="h-full w-full object-cover" src="data:image/jpg;base64, <%= product.productPic.toString('base64') %>" alt="">
                         </div>
                         <div class="btm h-[30%] w-full bg-[<%= product.panelColor %>] flex items-center justify-between px-3">
@@ -68,21 +63,25 @@
                     </div>
                 <%  }) %>  
              <%  }else{ %>
-                <p class="text-zinc-500 text-xl mt-5">No products yet</p>
+                <p class="text-zinc-500 text-xl mt-5">No products added yet</p>
             <% } %>
+            <div class="item h-60 w-[22%] bg-pink-800">
+                <div class="up h-[70%] w-full ">
+
+                </div>
+                <div class="btm h-[30%] w-full  flex items-center justify-between px-3">
+                   <div class="name-price font-semibold">
+                    <div class="name"> product.name </div>
+                    <div class="price">Rs  product.price</div>
+                   </div>
+                   <div class="add cursor-pointer h-7 w-7 rounded-full bg-white flex items-center justify-center">
+                   </div>
+                </div>
+            </div>
 
             </div>
         </div>
    </div>
 
-
-   <script>
-    setTimeout(function(){
-        var successMsg = document.querySelector("#success-msg");
-        if(successMsg){
-            successMsg.style.display = "none"
-        }
-    }, 3000)
-   </script>
 </body>
 </html>
