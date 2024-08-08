@@ -17,67 +17,67 @@
             <div class="right flex items-center gap-5">
                 <a href="/profile" class="text-xl font-semibold">Home</a>
                 <a href="/product" class="text-xl font-semibold">Create new product</a>
-                <a href="" class="text-xl font-semibold">My Account</a>
+                <a href="/account" class="text-xl font-semibold">My Account</a>
                 <a class="text-xl text-red-600 font-semibold" href="/logout">Logout</a>
             </div>
         </div>
         
         <div class="content flex items-center gap-5 w-full h-full">
-            <div class="left w-[25%] top-[13%] fixed h-full flex flex-col pt-2 pl-5">
-                <div class="sort flex gap-3">
-                    <p class="text-lg">sort by</p>
-                    <select class="bg-transparent outline-none font-semibold" name="sort" id="">
-                        <option value="Popular">Popular</option>
-                        <option value="Newest">Newest</option>
-                    </select>
-                </div>
-                <div class="mid mt-24 gap-2 flex flex-col">
-                    <a href="">New Collection</a>
-                    <a href="">AI Products</a>
-                    <a href="">Discounted Products</a>
-                </div>
-                <div class="filter mt-24 flex flex-col gap-2">
-                    <p class="font-semibold">Filter by:</p>
-                    <a href="">Avalabilty</a>
-                    <a href="">Discount</a>
-                </div>
-            </div>
-            <div class="right w-[75%] absolute left-[27%] top-[13%] flex flex-wrap gap-2 pt-2">
+            <div class="right w-full absolute left-10 top-[13%] flex flex-wrap gap-2 pt-2">
                
                <% if(user.cart.length > 0){ %>
-                  <% user.cart.forEach(function(product){ %>
-                    <div class="item h-60 w-[22%] bg-pink-800">
-                        <div class="up h-[70%] w-full bg-[<%= product.bgColor %>]">
+                  <% user.cart.reverse().forEach(function(product){ %>
+                    <div class="item h-80 w-[80%] flex">
+                        <div class="left w-[30%] h-full bg-green-600">
+                            <div class="up h-[70%] w-full bg-[<%= product.bgColor %>]">
                             
-                            <img class="h-full w-full object-cover" src="data:image/jpg;base64, <%= product.productPic.toString('base64') %>" alt="">
+                                <img class="h-full w-full object-cover" src="data:image/jpg;base64, <%= product.productPic.toString('base64') %>" alt="">
+                            </div>
+                            <div class="btm h-[30%]  w-full  flex items-center justify-between">
+                                <div class="name-price font-semibold h-full w-full text-[<%= product.textColor %>]">
+                                    <div class="h-[50%] w-full flex items-center px-3  bg-[<%= product.panelColor %>]">
+                                        <div class="name"> <%= product.name %> </div>
+                                    </div>
+                                   <div class="h-[50%] w-full flex items-center justify-between px-3  bg-[<%= product.textColor %>] text-[<%= product.panelColor %>]">
+                                    <div class="price">Net Total </div>
+                                    <div>₹ <%= product.price + 20 - product.discountedPrice %></div>
+                                   </div>
+                                </div>
+                             </div>
                         </div>
-                        <div class="btm h-[30%] w-full bg-[<%= product.panelColor %>] flex items-center justify-between px-3">
-                           <div class="name-price font-semibold text-[<%= product.textColor %>]">
-                            <div class="name"><%= product.name %></div>
-                            <div class="price">Rs <%= product.price %></div>
+                        <div class="right w-[70%] h-full pl-10">
+                            <h6 class="text-xl font-semibold">Price Breakdown</h6>
+                            <div>
+                                <div class="flex gap-24 mt-3">
+                                    <h5>Total MRP</h5>
+                                    <h5>₹ <%= product.price  %></h5>
+                                </div>
+                                <div class="flex gap-12 mt-3">
+                                    <h5>Discount on MRP</h5>
+                                    <h5>₹ <%= product.discountedPrice %></h5>
+                                </div>
+                                <div class="flex gap-20 mt-3">
+                                    <h5>Platform Fee</h5>
+                                    <h5>₹ 20</h5>
+                                </div>
+                                <div class="flex gap-20 mt-3">
+                                    <h5>Shipping Fee</h5>
+                                    <h5>FREE</h5>
+                                </div>
+                            </div>
+                            <div class="border-t-2 border-zinc-900 mt-5 w-[90%]">
+                               <div class="flex gap-20 mt-5 font-semibold">
+                                <h2>Total Amount</h2>
+                                <h2 class="text-green-600">₹ <%= product.price + 20 - product.discountedPrice %></h2>
+                               </div>
+                            </div>
                            </div>
-                           <div class="add cursor-pointer h-7 w-7 rounded-full bg-white flex items-center justify-center">
-                            <a href="/cart/<%= product._id %>" class="font-semibold text-xl"><i class="ri-add-fill"></i></a>
-                           </div>
-                        </div>
                     </div>
                 <%  }) %>  
              <%  }else{ %>
                 <p class="text-zinc-500 text-xl mt-5">No products added yet</p>
             <% } %>
-            <div class="item h-60 w-[22%] bg-pink-800">
-                <div class="up h-[70%] w-full ">
-
-                </div>
-                <div class="btm h-[30%] w-full  flex items-center justify-between px-3">
-                   <div class="name-price font-semibold">
-                    <div class="name"> product.name </div>
-                    <div class="price">Rs  product.price</div>
-                   </div>
-                   <div class="add cursor-pointer h-7 w-7 rounded-full bg-white flex items-center justify-center">
-                   </div>
-                </div>
-            </div>
+           
 
             </div>
         </div>

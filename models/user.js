@@ -48,7 +48,8 @@ const userSchema = mongoose.Schema({
    
     address: addressSchema,
     profilePic: {
-        type: Buffer
+        type: Buffer,
+        default: "default.jpg"
     },
     cart: [
         { 

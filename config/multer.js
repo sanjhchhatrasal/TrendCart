@@ -3,7 +3,7 @@ const path = require("path");
 const storage = multer.memoryStorage();
 
 function fileFilter (req, file,  cb){
-    let extname = [".jpeg", ".jpg", ".webp" , ".png"];
+    let extname = [".jpeg", ".jpg", ".webp" , ".png", ".avif"];
     let ext = path.extname(file.originalname);
 
     let included = extname.includes(ext);

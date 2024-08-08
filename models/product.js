@@ -10,7 +10,7 @@ const productSchema = mongoose.Schema({
         required: true
     },
     discountedPrice: {
-        type: String,
+        type: Number,
         default: 0
     },
     panelColor: {
