@@ -35,6 +35,7 @@ module.exports.registerUser = async (req, res) => {
   } catch (error) {
     req.flash("error", "An error occurred during registration.");
     console.log(error.message);
+    
   }
 };
 
